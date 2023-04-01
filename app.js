@@ -11,6 +11,8 @@ var hbs = require('express-handlebars') //new
 
 var app = express();
 
+var fileUpload = require('express-fileupload')
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
