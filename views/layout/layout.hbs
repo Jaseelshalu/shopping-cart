@@ -54,7 +54,12 @@
         </nav>
     </header>
 
+    {{#if admin}}
     {{>admin-header}}
+    {{else}}
+    {{>user-header}}
+    {{/if}}
+    
     {{{body}}}
 
     <!-- Optional JavaScript -->
