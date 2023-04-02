@@ -1,5 +1,5 @@
 module.exports={
-    addProduct:()=>{
-
+    addProduct:(product)=>{
+        console.log(product);
     }
 }
