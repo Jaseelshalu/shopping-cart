@@ -40,9 +40,11 @@ router.get('/add-product', (req, res) => {
 })
 
 router.post('/add-product', (req, res) => {
-  // let image = req.files.Image
-  productHelpers.addProduct(req.body,(id)=>{
-    
+  let image = req.files.Image
+  productHelpers.addProduct(req.body, (id) => {
+    image.mv(`./public/images/product-images/${id}.jpg`, (err) => {
+      if (!err) res.redirect('/admin')
+    })
   })
 })
 
