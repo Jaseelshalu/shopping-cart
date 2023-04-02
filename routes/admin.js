@@ -40,6 +40,7 @@ router.get('/add-product', (req, res) => {
 })
 
 router.post('/add-product', (req, res) => {
+  let image = req.files.Image
   productHelpers.addProduct(req.body)
 })
 
