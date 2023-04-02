@@ -26,11 +26,11 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(fileUpload())
+app.use(fileUpload()) //new
 db.connect((err)=>{
   if(err) console.log('Database Connection Error'+err);
   else console.log('Database Connected');
-})
+}) //new
 
 app.use('/', userRouter);
 app.use('/admin', adminRouter);
