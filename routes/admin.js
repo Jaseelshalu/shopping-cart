@@ -44,6 +44,7 @@ router.post('/add-product', (req, res) => {
   productHelpers.addProduct(req.body, (id) => {
     image.mv(`./public/images/product-images/${id}.jpg`, (err) => {
       if (!err) res.redirect('/admin')
+      else console.log(err);
     })
   })
 })
