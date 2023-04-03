@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var productHelpers = require('../helpers/product-helpers')
 
 /* GET home page. */
 
