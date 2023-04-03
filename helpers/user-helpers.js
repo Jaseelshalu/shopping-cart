@@ -13,7 +13,7 @@ module.exports = {
     doLogin: (userData) => {
         let response = {}
         return new Promise(async (resolve, reject) => {
-            let user = await db.get().collection(collection.USER_COLLECTION).find({ Email: userData.Email })
+            let user = await db.get().collection(collection.USER_COLLECTION).findOne({ Email: userData.Email })
             if (user) {
                 bcrypt.compare(userData.Password, user.Password).then((result) => {
                     if (result) {
