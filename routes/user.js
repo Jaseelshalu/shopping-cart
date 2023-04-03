@@ -5,7 +5,9 @@ var productHelpers = require('../helpers/product-helpers')
 /* GET home page. */
 
 router.get('/', function (req, res, next) {
-  res.render('index', { products, admin: false });
+  productHelpers.getAllProducts().then((products) => {
+    res.render('index', { products, admin: false });
+  })
 });
 
 module.exports = router;
