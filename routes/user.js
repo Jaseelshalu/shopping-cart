@@ -17,7 +17,7 @@ router.get('/login', (req, res) => {
 })
 
 router.post('/login', (req, res) => {
-  userHelpers.doLogin((response) => {
+  userHelpers.doLogin(req.body).then((response) => {
     if (response.status) {
       req.session.user = response.user
       req.session.loggedIn = true
