@@ -13,6 +13,7 @@ var app = express();
 
 var fileUpload = require('express-fileupload') //new
 var db = require('./config/connection') //new
+var session = require('express-session') //new
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -27,8 +28,10 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(fileUpload()) //new
-db.connect((err)=>{
-  if(err) console.log('Database Connection Error: '+err);
+app.use(session({ secret: "key", cookie: { maxAge: 600000 } }))
+
+db.connect((err) => {
+  if (err) console.log('Database Connection Error: ' + err);
   else console.log('Database Connected');
 }) //new
 
