@@ -7,8 +7,9 @@ const { response } = require('../../../Web Development/shopping-cart/app');
 /* GET home page. */
 
 router.get('/', function (req, res, next) {
+  let user = req.session.user
   productHelpers.getAllProducts().then((products) => {
-    res.render('user/view-products', { products, admin: false });
+    res.render('user/view-products', { products, admin: false, user });
   })
 });
 
