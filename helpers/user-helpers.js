@@ -6,8 +6,8 @@ module.exports = {
         let response = {}
         return new Promise(async (resolve, reject) => {
             userData.Password = await bcrypt.hash(userData.Password, 10)
-            db.get().collection(collection.USER_COLLECTION).insertOne(userData).then((user) => {
-                response.user = user
+            db.get().collection(collection.USER_COLLECTION).insertOne(userData).then(() => {
+                response.user = userData
                 response.status = true
                 resolve(response)
             })
