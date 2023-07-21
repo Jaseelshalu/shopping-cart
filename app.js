@@ -11,6 +11,26 @@ var hbs = require('express-handlebars') //new
 
 var app = express();
 
+const crypto = require('crypto');
+
+const generateRandomSecret = (length) => {
+  return crypto.randomBytes(length).toString('hex');
+};
+
+const secret = generateRandomSecret(32); // 32 bytes (256 bits) is a common length for a secret
+console.log('Generated secret:', secret);
+
+
+const express = require('express');
+const session = require('express-session');
+
+// Use the session middleware with the secret
+app.use(session({
+  secret: secret,
+  resave: false,
+  saveUninitialized: false
+}));
+
 var fileUpload = require('express-fileupload') //new
 var db = require('./config/connection') //new
 var session = require('express-session') //new
