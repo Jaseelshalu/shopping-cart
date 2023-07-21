@@ -1,8 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var productHelpers = require('../helpers/product-helpers')
-var userHelpers = require('../helpers/user-helpers');
-const { response } = require('../../../Web Development/shopping-cart/app');
+var userHelpers = require('../helpers/user-helpers')
 
 /* GET home page. */
 
