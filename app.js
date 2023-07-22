@@ -20,8 +20,6 @@ const generateRandomSecret = (length) => {
 const secret = generateRandomSecret(32); // 32 bytes (256 bits) is a common length for a secret
 console.log('Generated secret:', secret);
 
-
-const express = require('express');
 const session = require('express-session');
 
 // Use the session middleware with the secret
@@ -33,7 +31,7 @@ app.use(session({
 
 var fileUpload = require('express-fileupload') //new
 var db = require('./config/connection') //new
-var session = require('express-session') //new
+// var session = require('express-session') //new
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
