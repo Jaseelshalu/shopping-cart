@@ -10,7 +10,7 @@ module.exports = {
     },
     getAllProducts: () => {
         return new Promise(async (resolve, reject) => {
-            db.get().collection(collection.PRODUCT_COLLECTION).find().toArray().then((products) => {
+            db.get().collection('product').find().toArray().then((products) => {
             resolve(products)
             })
         })
