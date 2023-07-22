@@ -5,7 +5,7 @@ const state = {
 };
 
 // mongodb connection string
-const url = "mongodb+srv://jaseelwork098:QQXNonNREXzRQtRi@entho.nrrx3zj.mongodb.net/?retryWrites=true&w=majority";
+const url = "mongodb+srv://jaseelsha:jaseelsha@shopping-cart.keyvqql.mongodb.net/?retryWrites=true&w=majority";
 // database name
 const dbName = "shopping";
 
